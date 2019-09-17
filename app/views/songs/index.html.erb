@@ -7,10 +7,10 @@
     </tr>
   </thead>
   <tbody>
-      <%= @songs.each do |s| %>
+      <%= @songs.each do |song| %>
         <tr>
-          <td><%= s.title %></td>
-          <td><%= s.artist_name %></td>
+          <td><%= song.title %></td>
+          <td><%= song.artist_name %></td>
         </tr>
       <% end %>
   </tbody>
