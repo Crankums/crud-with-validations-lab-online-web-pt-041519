@@ -1,4 +1,15 @@
 <%= form_for @song, do |f| %>
+  <% if @song.errors.any? %>
+    <div id="error_message">
+      <h2>There was a problem...</h2>
+
+      <ul>
+        <% @song.errors.full_messages.each do |message| %>
+        <li><%=message%></li>
+        <% end %>
+      </ul>
+    </div>
+    <%end%>
 
 <%= f.label :title %>
 <%= f.text_field :title, @song.title %>
