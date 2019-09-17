@@ -27,7 +27,7 @@ class SongsController < ApplicationController
   end
 
   def update
-    set_song
+    @song = Song.find(params[:id])
     if @song.update(song_params)
       @song.save
       redirect_to song_path(@song)
@@ -37,10 +37,6 @@ class SongsController < ApplicationController
   end
 
   private
-
-  def set_song
-    @song = Song.find(params[:id])
-  end
 
   def song_params
     params.require(:song).permit(
